@@ -1,0 +1,9 @@
+.week-day, .date{
+    font-size: 24px;
+    font-size: 24px;
+    letter-spacing: 4px;
+}
+
+.date{
+    margin-top: 8px;
+}
