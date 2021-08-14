@@ -1,3 +1,8 @@
 .page{
+    height: 100vh;
     position: relative;
+    background-size: cover;
+    background-position: bottom;
+    overflow: hidden;
+    width: 100%;
 }
