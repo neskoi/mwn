@@ -15,6 +15,7 @@ const Page = (props) => {
                 fetch(request)
                     .then(response => response.json())
                     .then(json => {
+                        json.weather = json.weather[0];
                         setWeatherInfo(json);
                         console.log(json)
                     });

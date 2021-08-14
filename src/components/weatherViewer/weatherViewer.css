@@ -17,20 +17,15 @@
     margin: 8px 0 16px 32px;
 }
 
-.weather-img{
-    height: 96px;
-    margin-bottom: 16px;
-    width: 96px;
-    position: absolute;
-    top: 65px;
-}
-
 .wind-holder{
     bottom: 65px;
     position: absolute;
 }
 
 .wind-img{
+    background-image: url(../../assets/img/wind.png);
+    background-size: contain;
+    background-repeat: no-repeat;
     height: 64px;
     margin-bottom: 8px;
     width: 64px;
@@ -38,4 +33,56 @@
 
 .wind-speed{
     letter-spacing: 2px;
+}
+
+.weather-img{
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 96px;
+    margin-bottom: 16px;
+    position: absolute;
+    top: 65px;
+    width: 96px;
+}
+
+.clear{
+    background-image: url(../../assets/img/clear.png);
+}
+
+.clouds{
+    background-image: url(../../assets/img/clouds.png);
+}
+
+.drizzle{
+    background-image: url(../../assets/img/drizzle.png);
+}
+
+.haze{
+    background-image: url(../../assets/img/haze.png);
+}
+
+.rain{
+    background-image: url(../../assets/img/rain.png);
+}
+
+.snow{
+    background-image: url(../../assets/img/snow.png);
+}
+
+.thunderstorm{
+    background-image: url(../../assets/img/thunderstorm.png);
+}
+
+.tornado{
+    background-image: url(../../assets/img/tornado.png);
+}
+
+.mist,
+.smoke,
+.dust,
+.fog,
+.sand,
+.ash,
+.squall{
+    background-image: url(../../assets/img/fog.png);
 }
