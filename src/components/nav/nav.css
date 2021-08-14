@@ -5,15 +5,16 @@
     font-size: 20px;
     height: 70px;
     justify-content: space-between;
+    min-width: 360px;
+    left: 0;
     padding: 0 32px;
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
 }
 
 .logo{
-    font-weight: 650;
+    letter-spacing: 2px;
 }
 
 .nav ul{
@@ -23,4 +24,17 @@
     height: 100%;
     width: 200px;
     text-transform: capitalize;
+}
+
+@media (max-width: 460px){
+    .logo{
+       color: transparent;
+       display: flex;
+       align-items: center;
+    }
+
+    .logo::before{
+        content: "MWN";
+        color: white;
+    }
 }

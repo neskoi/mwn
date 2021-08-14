@@ -1,6 +1,10 @@
 .page{
+    background-color: rgb(36, 36, 36);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    position: relative;
+    justify-content: center;
     background-size: cover;
     background-position: bottom;
     overflow: hidden;

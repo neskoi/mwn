@@ -5,9 +5,9 @@ import WeatherViewer from '../components/weatherViewer/WeatherViewer';
 import bkgs from '../assets/bkgs.json';
 
 const Page = (props) => {
-    //const background = useRef("noimgbro");
     const [weatherInfo, setWeatherInfo] = useState({});
-    const [background, setBackground] = useState("/default.jfif");
+    const [background, setBackground] = useState("");
+    const visible = useRef(0);
 
     useEffect(() => {
         if("geolocation" in navigator){
@@ -22,9 +22,9 @@ const Page = (props) => {
                     .then(json => {
                         json.weather = json.weather[0];
                         setWeatherInfo(json);
-                        console.log(json)
                     });
             })
+            visible.current = 1;
         }
     }, []);
 
@@ -39,7 +39,7 @@ const Page = (props) => {
     return (
         <section className="page" style={{backgroundImage: `url(${background})`}}>
             <Nav/>
-            <WeatherViewer data={weatherInfo}/>
+            <WeatherViewer visible={visible.current} data={weatherInfo}/>
         </section>
     )
 }
