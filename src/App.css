@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color: #161616;
   height: 100vh;
-
+  background-image: url(https://cdn.pixabay.com/photo/2018/02/06/13/15/nature-3134705_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }

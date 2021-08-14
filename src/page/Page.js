@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-
-const Weather = (props) => {
+import './page.css'
+import Nav from '../components/nav/Nav';
+import WeatherViewer from '../components/weatherViewer/WeatherViewer'
+const Page = (props) => {
     const [weatherInfo, setWeatherInfo] = useState({});
 
     useEffect(() => {
@@ -23,9 +25,11 @@ const Weather = (props) => {
 
     return (
         <>
-            <div>oi</div>
+            <Nav/>
+            <WeatherViewer data={weatherInfo}/>
+            <div></div>
         </>
     )
 }
 
-export default Weather
+export default Page

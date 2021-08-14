@@ -1,0 +1,28 @@
+.temperatures{
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+}
+
+.actual-temperature{
+    font-size: 96px;
+    margin: 0 64px;
+    position: relative;
+}
+
+.actual-temperature::before{
+    content: "°";
+    position: absolute;
+    right: -32px;
+}
+
+.min-max-temperature{
+    font-size: 48px;
+    position: relative;
+}
+
+.min-max-temperature::before{
+    content: "°";
+    position: absolute;
+    right: -22px;
+}

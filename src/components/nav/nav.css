@@ -1,0 +1,26 @@
+.nav{
+    align-items: center;
+    background-color: var(--ui-base-color);
+    display: flex;
+    font-size: 20px;
+    height: 70px;
+    justify-content: space-between;
+    padding: 0 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.logo{
+    font-weight: 650;
+}
+
+.nav ul{
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    height: 100%;
+    width: 200px;
+    text-transform: capitalize;
+}

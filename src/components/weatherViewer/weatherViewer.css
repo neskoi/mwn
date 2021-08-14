@@ -1,0 +1,51 @@
+.weather-viewer{
+    align-items: center;
+    background-color: var(--ui-base-color);
+    border-radius: 50%;
+    display: flex;
+    height: 650px;
+    flex-direction: column;
+    justify-content: center;
+    left: 50%;
+    position: absolute;
+    top: calc(50% + 35px);
+    transform: translateX(-50%) translateY(-50%);
+    width: 650px;
+}
+
+.city-name{
+    margin: 8px 0 16px 32px;
+}
+
+.weather-img{
+    height: 96px;
+    margin-bottom: 16px;
+    width: 96px;
+    position: absolute;
+    top: 65px;
+}
+
+.week-day, .date{
+    font-size: 24px;
+    font-size: 24px;
+    letter-spacing: 4px;
+}
+
+.date{
+    margin-top: 8px;
+}
+
+.wind-holder{
+    bottom: 65px;
+    position: absolute;
+}
+
+.wind-img{
+    height: 64px;
+    margin-bottom: 8px;
+    width: 64px;
+}
+
+.wind-speed{
+    letter-spacing: 2px;
+}
