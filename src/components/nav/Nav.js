@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import './nav.css'
 
-const Nav = ({search}) => {
+const Nav = ({aboutVisibility, weatherVisibility, search}) => {
     const ref = useRef("");
 
     function changeInputVisibility(e){
@@ -31,8 +31,8 @@ const Nav = ({search}) => {
                         <input ref={ref} onKeyDown={handleEnter} type="text" className="city-input" placeholder="Digite a cidade desejada"></input>
                     </div>
                 </li>
-                <li>inicio</li>
-                <li>sobre</li>
+                <li onClick={weatherVisibility}>inicio</li>
+                <li onClick={aboutVisibility}>sobre</li>
             </ul>
         </nav>
     )

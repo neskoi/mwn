@@ -5,10 +5,12 @@ import WeatherViewer from '../components/weatherViewer/WeatherViewer';
 import bkgs from '../assets/bkgs.json';
 import ErrorComponet from "../components/errorComponent/ErrorComponent";
 import CircleBackground from "../components/circleBackground/CircleBackground";
+import About from "../components/about/About";
 
 const Page = (props) => {
     const [weatherInfo, setWeatherInfo] = useState({});
     const [background, setBackground] = useState("");
+    const [navigation, setNavigation] = useState(0);
     const visible = useRef(0);
 
     function requestWeatherApi(request){
@@ -38,6 +40,16 @@ const Page = (props) => {
             });
     }
 
+    function handleAboutVisibility(){
+        visible.current = 0
+        setNavigation(1);
+    }
+
+    function handleWeatherVisibility(){
+        visible.current = 1
+        setNavigation(0);
+    }
+
     useEffect(() => {
        (async ()=>{
             const isGeoGranted = await navigator.permissions.query({name:'geolocation'});
@@ -63,12 +75,16 @@ const Page = (props) => {
 
     return (
         <section className="page" style={{backgroundImage: `url(${background})`}}>
-            <Nav search={searchByCityName}/>
+            <Nav search={searchByCityName} aboutVisibility={handleAboutVisibility} weatherVisibility={handleWeatherVisibility}/>
             {weatherInfo.cod == "200" ? 
                 <WeatherViewer visible={visible.current} data={weatherInfo}/> : 
                 <CircleBackground visible={visible.current}>
                     <ErrorComponet title="404" message="Cidade não encontrada, verifique a ortografia." />
                 </CircleBackground>}
+
+           <CircleBackground visible={navigation}>
+                <About/>
+            </CircleBackground>
         </section>
     )
 }

@@ -1,0 +1,40 @@
+.about{
+    text-align: center;
+}
+
+.about p {
+    margin: 16px;
+}
+
+.about a, .about a:active {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.about > :first-child{
+    font-size: 48px;
+    letter-spacing: 4px;
+    margin-bottom: 24px;
+}
+
+.about p{
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 32px;
+}
+
+.repo{
+    font-size: 20px;
+    color: white;
+}
+
+.signature{
+    color:white;
+    font-size: 48px;
+    margin-top: 16px;
+    letter-spacing: 8px;
+}
+
+.signature:hover, .repo:hover{
+    color: #50adb9;
+}
