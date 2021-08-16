@@ -11,12 +11,13 @@ const Page = (props) => {
     const [background, setBackground] = useState("");
     const visible = useRef(0);
 
-    function requestApi(request){
+    function requestWeatherApi(request){
         fetch(request)
             .then(response => response.json())
             .then(json => {
                 if(json.cod === 200) json.weather = json.weather[0];
                 setWeatherInfo(json);
+                visible.current = 1;
             });
     }
 
@@ -24,21 +25,32 @@ const Page = (props) => {
         const apiKey = process.env.REACT_APP_APIKEY;
         const language = navigator.language.slice(0,2);
         const request = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&&units=metric&appid=${apiKey}&lang=${language}`;
-        requestApi(request);
+        requestWeatherApi(request);
+    }
+
+    function requestGeoApi(){
+        const request = `http://ip-api.com/json/`
+        fetch(request)
+            .then(response => response.json())
+            .then(json => {
+                const cityName = json.city;
+                searchByCityName(cityName);
+            });
     }
 
     useEffect(() => {
-        if("geolocation" in navigator){
-            navigator.geolocation.getCurrentPosition(function(position) {
+       (async ()=>{
+            const isGeoGranted = await navigator.permissions.query({name:'geolocation'});
+            if(!("geolocation" in navigator) || isGeoGranted.state === "denied") {requestGeoApi(); return;};
+            navigator.geolocation.getCurrentPosition(position => {
                 const latitude = position.coords.latitude;
                 const longitude = position.coords.longitude;
                 const apiKey = process.env.REACT_APP_APIKEY;
                 const language = navigator.language.slice(0,2);
                 const request = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}&lang=${language}`;
-                requestApi(request);
+                requestWeatherApi(request);
             })
-            visible.current = 1;
-        }
+        })()
     }, []);
 
     useEffect(() => {
