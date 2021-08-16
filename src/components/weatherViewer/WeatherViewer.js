@@ -1,29 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './weatherViewer.css';
 
 import CityName from './cityName/CityName';
 import Temperatures from './temperatures/Temperatures';
 import DateElement from './dateElement/DateElement';
+import CircleBackground from '../circleBackground/CircleBackground';
 
 const WeatherViewer = ({data, visible}) => {
-    const [size, setSize] = useState(1);
-
-    const reScale = () => {
-        const windowWidth = window.innerWidth;
-        if(windowWidth > 650) return;
-        const percentualDif = windowWidth/(650 + 64);
-        const scale = percentualDif > 1 ? 1 : percentualDif;
-        setSize(scale);
-    }
-
-    useEffect(() => {
-        reScale();
-    }, [])
-
-    window.addEventListener('resize', reScale)
-
     return (
-        <div className="weather-viewer" style={{opacity:visible, transform: `scale(${size})`}}>
+        <CircleBackground visible = {visible}>
             <div className={`weather-img ${data.weather?.main.toLowerCase()}`} title={`${data.weather?.description}`}/>
             <div className="temp"></div>
             <Temperatures data={data}/>
@@ -33,9 +18,8 @@ const WeatherViewer = ({data, visible}) => {
                 <div className="wind-img"/>
                 <p className="wind-speed"> {data.wind?.speed}m/s</p>
             </div>
-        </div>
+        </CircleBackground>
     )
 }
-
 
 export default WeatherViewer

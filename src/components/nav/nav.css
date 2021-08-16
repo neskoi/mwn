@@ -26,6 +26,55 @@
     text-transform: capitalize;
 }
 
+.search{
+    background-image: url("../../assets/img/search.png");
+    background-size: contain;
+    height: 24px;
+    position: relative;
+    width: 24px;
+}
+
+.city-input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(256, 256, 256, 0.5);
+    bottom: 0;
+    color:  rgba(256, 256, 256, 0.9);
+    height: 24px;
+    letter-spacing: 1px;
+    position: absolute;
+    right: 44px;
+    text-align: center;
+    width: 0px;
+    transition: all 0.25s;
+}
+
+.city-input::placeholder { 
+    color: rgba(256, 256, 256, 0.75);
+}
+
+.city-input:focus{
+    outline: none;
+    border-bottom: 1px solid rgba(256, 256, 256, 0.8);
+}
+
+@media (max-width: 650px){
+    .city-input{
+        background-color: var(--ui-base-color);
+        border-top: 1px solid rgba(34, 34, 34, .3);
+        border-bottom: 3px solid rgba(256, 256, 256, 0.9);
+        height: 27px;
+        left: 0;
+        right: initial;
+        top: 70px;
+        position: fixed;
+    }
+
+    .city-input:focus{
+        border-bottom: 3px solid rgba(256, 256, 256, 0.8);
+    }
+}
+
 @media (max-width: 460px){
     .logo{
        color: transparent;
