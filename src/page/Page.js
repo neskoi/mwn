@@ -31,7 +31,7 @@ const Page = (props) => {
     }
 
     function requestGeoApi(){
-        const request = `http://ip-api.com/json/`
+        const request = `https://ipapi.co/json/`
         fetch(request)
             .then(response => response.json())
             .then(json => {

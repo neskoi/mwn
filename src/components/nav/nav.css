@@ -26,6 +26,14 @@
     text-transform: capitalize;
 }
 
+.nav ul > li{
+    cursor: pointer;
+}
+
+.nav ul > li:hover{
+    border-bottom: 1px solid white;
+}
+
 .search{
     background-image: url("../../assets/img/search.png");
     background-size: contain;

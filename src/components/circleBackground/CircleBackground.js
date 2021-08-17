@@ -17,8 +17,8 @@ const CircleBackground = ({children, visible}) => {
 
     window.addEventListener('resize', reScale);
 
-    const position = visible == 1 ? 'initial' : 'absolute';
-    const zIndex = visible == 1 ? '5' : '0';
+    const position = visible === 1 ? 'initial' : 'absolute';
+    const zIndex = visible === 1 ? '5' : '0';
 
     return (
         <div className="circle-background" style={{opacity:visible, transform: `scale(${size})`, position: position, zIndex: zIndex}}>
